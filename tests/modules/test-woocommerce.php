@@ -192,6 +192,10 @@ class EPTestWooCommerceModule extends EP_Test_Base {
 	public function testSearchOnAllFrontEnd() {
 		ep_activate_module( 'woocommerce' );
 		EP_Modules::factory()->setup_modules();
+		
+		ep_create_and_sync_post( array( 'post_content' => 'findme', 'post_type' => 'shop_order' ) );
+		
+		ep_refresh_index();
 
 		add_action( 'ep_wp_query_search', array( $this, 'action_wp_query_search' ), 10, 0 );
 
