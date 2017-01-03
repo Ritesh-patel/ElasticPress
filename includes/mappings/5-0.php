@@ -223,7 +223,9 @@ return array(
 							'type' => 'keyword',
 						),
 						'sortable' => array(
-							'type' => 'keyword',
+							'type' => 'text',
+							'analyzer' => 'ewp_lowercase',
+							'fielddata' => true,
 						),
 					),
 				),

@@ -48,7 +48,7 @@ class EP_WP_Query_Integration {
 		add_filter( 'found_posts_query', array( $this, 'filter_found_posts_query' ), 5, 2 );
 
 		// Query and filter in EP_Posts to WP_Query
-		add_filter( 'the_posts', array( $this, 'filter_the_posts' ), 10, 2 );
+		add_filter( 'posts_pre_query', array( $this, 'filter_the_posts' ), 10, 2 );
 
 		// Ensure we're in a loop before we allow blog switching
 		add_action( 'loop_start', array( $this, 'action_loop_start' ), 10, 1 );
